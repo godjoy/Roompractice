@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import com.example.roompractice.R
 import com.example.roompractice.db.entity.Dog
-import com.jakewharton.rxbinding2.view.clicks
 import kotlinx.android.synthetic.main.activity_add.*
 import java.util.concurrent.TimeUnit
 
@@ -20,15 +19,11 @@ class AddActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add)
 
-        btnSave.clicks()
-            .throttleFirst(2000, TimeUnit.MILLISECONDS)
-            .subscribe {
-                addDog()
-                startActivity(Intent(this,MainActivity::class.java))
-                finish()
-            }
-            .apply {  }
-
+        btnSave.setOnClickListener {
+            addDog()
+            startActivity(Intent(this,MainActivity::class.java))
+            finish()
+        }
     }
 
     private fun addDog() {
