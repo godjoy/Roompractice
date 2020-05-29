@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roompractice.R
 import com.example.roompractice.databinding.ItemDogBinding
-import com.example.roompractice.entity.Dog
+import com.example.roompractice.db.entity.Dog
 
 class MainAdapter(private val click: (position: Int) -> Unit): RecyclerView.Adapter<MainAdapter.DogViewHolder>() {
 

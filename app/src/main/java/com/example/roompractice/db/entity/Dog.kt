@@ -1,6 +1,7 @@
-package com.example.roompractice.entity
+package com.example.roompractice.db.entity
 
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity
@@ -11,3 +12,4 @@ data class Dog(
     val breed: String,
     val cuteness: String
 )
+

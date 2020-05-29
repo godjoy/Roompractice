@@ -1,11 +1,11 @@
-package com.example.roompractice
+package com.example.roompractice.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.roompractice.dao.DogDao
-import com.example.roompractice.entity.Dog
+import com.example.roompractice.db.dao.DogDao
+import com.example.roompractice.db.entity.Dog
 
 @Database(entities = [Dog::class], version = 1)
 abstract class AppDatabase: RoomDatabase() {

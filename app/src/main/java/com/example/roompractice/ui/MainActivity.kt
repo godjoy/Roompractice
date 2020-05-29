@@ -3,7 +3,6 @@ package com.example.roompractice.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SearchView
@@ -11,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.roompractice.R
-import com.example.roompractice.entity.Dog
+import com.example.roompractice.db.entity.Dog
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -92,7 +91,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickEventCallback(position: Int){
         val data = mainAdapter.getDataAt(position)
-        mainViewModel.deleteDog(data)
+        mainViewModel.deleteDog(data) { finish() }
     }
 
 }

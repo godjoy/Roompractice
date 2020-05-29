@@ -3,9 +3,11 @@ package com.example.roompractice.repository
 import android.app.Application
 import android.os.AsyncTask
 import androidx.lifecycle.LiveData
-import com.example.roompractice.AppDatabase
-import com.example.roompractice.dao.DogDao
-import com.example.roompractice.entity.Dog
+import com.example.roompractice.db.AppDatabase
+import com.example.roompractice.db.dao.DogDao
+import com.example.roompractice.db.entity.Dog
+import io.reactivex.Completable
+import io.reactivex.Single
 
 class Repository (application: Application) {
 
@@ -25,26 +27,10 @@ class Repository (application: Application) {
     fun getDogByName(name: String): LiveData<MutableList<Dog>> {
         return dogDao.getDogByName(name)
     }
-    fun insertDog(dog: Dog) {
-        InsertDogAsyncTask(dogDao).execute(dog)
-    }
+    fun insertDog(dog: Dog): Completable = dogDao.insert(dog)
 
-    fun deleteDog(dog: Dog) {
-        DeleteDogAsyncTask(dogDao).execute(dog)
-    }
+    fun deleteDog(dog: Dog): Completable = dogDao.delete(dog)
 
-    private class InsertDogAsyncTask(val dogDao: DogDao) : AsyncTask<Dog, Unit, Unit>() {
-
-        override fun doInBackground(vararg d: Dog) {
-            dogDao.insertDog(d[0])
-        }
-    }
-
-    private class DeleteDogAsyncTask(val dogDao: DogDao): AsyncTask<Dog, Unit, Unit>() {
-
-        override fun doInBackground(vararg d: Dog) {
-            dogDao.deleteDog(d[0])
-        }
-    }
+    fun updateDog(dog: Dog): Completable = dogDao.update(dog)
 
 }

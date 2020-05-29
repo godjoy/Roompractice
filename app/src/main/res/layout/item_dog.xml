@@ -5,7 +5,7 @@
     <data>
         <variable
             name="itemDog"
-            type="com.example.roompractice.entity.Dog" />
+            type="com.example.roompractice.db.entity.Dog" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
