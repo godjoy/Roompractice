@@ -9,10 +9,10 @@ The repository has two branches, one using with RxJava
 You can simply store doggy's information such as name, address, variety, and cuteness with Room  
 + delete, update, select   
 <hr>
-##Develop Environment
+## Develop Environment
 Android studio 3.5.4
 <hr>
-##Application Version
+## Application Version
 * minSdk : 28
 * targetSdkVersion 29
 <hr>
