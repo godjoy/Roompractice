@@ -1,6 +1,6 @@
 # Roompractice
 This repository is an **AAC study project** on Room, Livata, ViewModel, and Repository patterns.   
-The repository has two branches, one using with RxJava 
+RoomwithRxJava branch uses RxJava 
 <br>
 
 ## Introduction
@@ -26,5 +26,5 @@ Android studio 3.5.4
 * rxBinding
 <br>
 
-# Structure
+## Structure
 ![image](https://user-images.githubusercontent.com/51503884/80896951-c2892000-8d2e-11ea-89e1-3450b37bb9ce.png)
