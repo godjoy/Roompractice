@@ -5,7 +5,7 @@ RoomwithRxJava branch uses RxJava
 
 ## Introduction
 * 🐶Dog🐶 Information Management Application   
-You can simply store doggy's information such as name, address, variety, and cuteness with Room  
+You can simply store doggy's information such as name, address, breed, and cuteness with Room  
 + delete, update, select 
 <br>
 
