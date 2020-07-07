@@ -19,11 +19,14 @@ Android studio 3.5.4
 <br> 
 
 ## Library   
-* Room   
-* lifecycle
-* rxJava 
-* rxAndroid
-* rxBinding
+| Library | version |
+| ------  | ------  |
+| Room    | 2.2.3 |
+| lifecycle | 2.1.0-alpha02 |
+| recyclerview | 1.1.0-alpha01 |
+| rxAndroid | 2.1.1 |
+| rxBinding | 2.0.0 |
+
 <br>
 
 ## Structure
