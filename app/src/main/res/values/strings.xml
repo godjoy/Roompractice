@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">RoomPractice</string>
+
+    <!-- DogsFragment -->
+    <string name="btn_add_dog">Add Dog</string>
 </resources>

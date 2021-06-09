@@ -2,6 +2,7 @@ package com.practice.room.data.room
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
 
@@ -9,13 +10,13 @@ import io.reactivex.rxjava3.core.Single
 interface DogDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertDog(dog: Dog)
+    fun insertDog(dog: Dog) : Completable
 
     @Delete
-    fun deleteAllDogs(dog: Dog)
+    fun deleteAllDogs(dog: Dog) : Completable
 
     @Update
-    fun updateDog(dog: Dog)
+    fun updateDog(dog: Dog) : Completable
 
     @Query("SELECT * from dog WHERE :id")
     fun getDogById(id: Long) : Single<Dog>

@@ -35,7 +35,6 @@ object ApiProvider {
             override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) = Unit
 
             override fun getAcceptedIssuers(): Array<X509Certificate> = arrayOf()
-
         })
 
         val sslContext = SSLContext.getInstance("SSL")
@@ -49,19 +48,7 @@ object ApiProvider {
         readTimeout(60, TimeUnit.SECONDS)
         connectTimeout(60, TimeUnit.SECONDS)
         writeTimeout(5, TimeUnit.SECONDS)
-
-        // Http Logger
-        addInterceptor(getLoggingInterceptor())
     }.build()
 
     private fun getGsonConverter() = GsonConverterFactory.create()
-
-    private fun getLoggingInterceptor(): HttpLoggingInterceptor =
-        HttpLoggingInterceptor().apply {
-            level = if (BuildConfig.DEBUG) {
-                HttpLoggingInterceptor.Level.BODY
-            } else {
-                HttpLoggingInterceptor.Level.NONE
-            }
-        }
 }
