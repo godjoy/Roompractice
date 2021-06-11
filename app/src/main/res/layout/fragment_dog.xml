@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.practice.room.viewmodel.DogViewModel" />
+            type="com.practice.room.ui.dog.DogViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

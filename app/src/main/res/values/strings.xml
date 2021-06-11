@@ -3,4 +3,7 @@
 
     <!-- DogsFragment -->
     <string name="btn_add_dog">Add Dog</string>
+
+    <!-- Add DogFragment -->
+    <string name="header_select_breed">Select Breed</string>
 </resources>

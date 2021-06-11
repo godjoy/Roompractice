@@ -1,4 +1,4 @@
-package com.practice.room.viewmodel
+package com.practice.room.ui.dogs
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

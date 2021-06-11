@@ -1,7 +1,8 @@
-package com.practice.room.viewmodel
+package com.practice.room.ui
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.practice.room.data.model.DogResult
 import com.practice.room.data.repository.DogRepository
 import com.practice.room.data.room.Dog
 import com.practice.room.util.base.BaseViewModel
@@ -12,19 +13,20 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 class MainViewModel(private val dogRepository: DogRepository): BaseViewModel() {
 
     init {
-        addData()
+        addDogs()
     }
 
-    fun addData() {
-        dogRepository.addDog(Dog(0, "dog1", "boxer", "https://images.dog.ceo/breeds/boxer/n02108089_3412.jpg"))
-        dogRepository
-            .addDog(Dog(0, "dog2", "akita", "https://images.dog.ceo/breeds/akita/512px-Ainu-Dog.jpg"))
+    private fun addDogs() {
+        dogRepository.addDog(Dog(0, "test", "testBreed", "null"))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe( {
+            .doOnSubscribe {
+                inProgressLoadData()
+            }
+            .subscribe({
                 finishLoadData()
             }, {
-                Log.d("MainViewModel", "$it")
+                finishLoadData()
             })
     }
 }

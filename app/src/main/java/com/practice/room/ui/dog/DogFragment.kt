@@ -5,8 +5,7 @@ import com.practice.room.R
 import com.practice.room.util.base.BaseFragment
 import com.practice.room.data.injection.Injection
 import com.practice.room.databinding.FragmentDogBinding
-import com.practice.room.viewmodel.DogViewModel
-import com.practice.room.viewmodel.ViewModelFactory
+import com.practice.room.util.ViewModelFactory
 
 class DogFragment: BaseFragment<DogViewModel, FragmentDogBinding>(R.layout.fragment_dog){
 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dog_navigation"
+    app:startDestination="@id/dogsFragment">
+
+    <fragment
+        android:id="@+id/dogsFragment"
+        android:name="com.practice.room.ui.dogs.DogsFragment"
+        android:label="DogsFragment"
+        tools:layout="@layout/fragment_dogs">
+        <action
+            android:id="@+id/action_dogsFragment_to_dogFragment"
+            app:destination="@id/dogFragment" />
+        <action
+            android:id="@+id/action_dogsFragment_to_selectBreedFragment"
+            app:destination="@id/selectBreedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogFragment"
+        android:name="com.practice.room.ui.dog.DogFragment"
+        android:label="DogFragment"
+        tools:layout="@layout/fragment_dog">
+    </fragment>
+    <fragment
+        android:id="@+id/addDogFragment"
+        android:name="com.practice.room.ui.add.AddDogFragment"
+        android:label="AddDogFragment"
+        tools:layout="@layout/fragment_add_dog">
+        <action
+            android:id="@+id/action_addDogFragment_to_dogFragment"
+            app:destination="@id/dogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectBreedFragment"
+        android:name="com.practice.room.ui.add.SelectBreedFragment"
+        android:label="SelectBreedFragment"
+        tools:layout="@layout/fragment_select_breed">
+        <action
+            android:id="@+id/action_selectBreedFragment_to_addDogFragment"
+            app:destination="@id/addDogFragment" />
+    </fragment>
+</navigation>

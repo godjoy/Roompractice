@@ -9,6 +9,7 @@ import io.reactivex.rxjava3.core.Single
 @Dao
 interface DogDao {
 
+    // Dog
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDog(dog: Dog) : Completable
 

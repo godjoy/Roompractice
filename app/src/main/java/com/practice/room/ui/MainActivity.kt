@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.practice.room.R
 import com.practice.room.data.injection.Injection
-import com.practice.room.viewmodel.MainViewModel
-import com.practice.room.viewmodel.ViewModelFactory
+import com.practice.room.util.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 

@@ -16,6 +16,5 @@ class RetrofitTest {
                 Log.d("RetrofitUnitTest", "getDogImage errorMsg: ${it.message}\n  cause: ${it.cause}")
             }
         )
-
     }
 }

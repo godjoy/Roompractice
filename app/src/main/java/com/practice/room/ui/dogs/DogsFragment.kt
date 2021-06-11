@@ -2,20 +2,16 @@ package com.practice.room.ui.dogs
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.findNavController
 import com.practice.room.R
 import com.practice.room.data.model.DogResult
 import com.practice.room.util.base.BaseFragment
 import com.practice.room.data.injection.Injection
-import com.practice.room.data.room.Dog
 import com.practice.room.databinding.FragmentDogsBinding
-import com.practice.room.viewmodel.DogsViewModel
-import com.practice.room.viewmodel.ViewModelFactory
-import okhttp3.internal.notify
+import com.practice.room.ui.add.SelectBreedFragment
+import com.practice.room.util.ViewModelFactory
 
 class DogsFragment: BaseFragment<DogsViewModel, FragmentDogsBinding>(R.layout.fragment_dogs){
 
@@ -34,6 +30,9 @@ class DogsFragment: BaseFragment<DogsViewModel, FragmentDogsBinding>(R.layout.fr
         super.onViewCreated(view, savedInstanceState)
         binding.rvDogs.apply {
             adapter = this@DogsFragment.adapter
+        }
+        binding.btnGoAddDog.setOnClickListener { v ->
+            v.findNavController().navigate(R.id.selectBreedFragment)
         }
     }
 
